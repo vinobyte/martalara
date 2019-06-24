@@ -1,1 +1,5 @@
 /* Add here all your CSS customizations */
+
+.tparrows::before, .tparrows::after {
+    font-weight: 900 !important;
+}
