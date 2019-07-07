@@ -3,3 +3,7 @@
 .tparrows::before, .tparrows::after {
     font-weight: 900 !important;
 }
+
+#header {
+background-color: #242e39;
+}
