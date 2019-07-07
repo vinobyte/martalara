@@ -78,6 +78,22 @@ theme.PluginScrollToTop.initialize = function() {};
 		}
 	}
 
+	function initMagnificPopup() {
+		$('.gallery-link').on('click', function () {
+			$(this).find('.gallery').magnificPopup('open');
+		});
+		
+		$('.gallery').each(function () {
+			$(this).magnificPopup({
+				delegate: 'a',
+				type: 'image',
+				gallery: {
+					enabled: true
+				}
+			});
+		});
+	}
+
 	if( $('.photography-demo-3').get(0) ) {
 		sliderOptions.fullScreenOffsetContainer = null;
 		sliderOptions.navigation.arrows.style = 'arrows-side-header-1';
@@ -209,7 +225,7 @@ theme.PluginScrollToTop.initialize = function() {};
 
 	 								$this.themePluginLazyLoad(opts);
 	 							});
-	 						});
+							});
 						});
 
 						// Ajax On Page
@@ -358,6 +374,7 @@ theme.PluginScrollToTop.initialize = function() {};
 							// Lightbox
 							$('.popup-with-move-anim').magnificPopup(portfolioLightboxOptions);
 
+							initMagnificPopup();
 						});
 
 
@@ -747,7 +764,9 @@ theme.PluginScrollToTop.initialize = function() {};
 				$(document).off('keydown');
 			}
 		}
-	}
+	};
+
+	initMagnificPopup();
 
 	if($('a[href="#photographyLightbox"]').get(0)) {
 		$('a[href="#photographyLightbox"]').on('click', function(){

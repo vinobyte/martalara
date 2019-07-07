@@ -7,3 +7,7 @@
 #header {
 background-color: #242e39;
 }
+
+.thumb-info-wrapper::after {
+    cursor: pointer;
+}
