@@ -298,96 +298,96 @@ theme.PluginScrollToTop.initialize = function() {};
 		},
 		loadMore: function() {
 
-			var self = this;
+			// var self = this;
 
-			self.$btn.hide();
-			self.$loader.show();
+			// self.$btn.hide();
+			// self.$loader.show();
 
 			// Ajax
-			$.ajax({
-				url: 'ajax/demo-photography-portfolio-infinite-scroll-load-more.html',
-				complete: function(data) {
+			// $.ajax({
+			// 	url: 'ajax/portfolio-load-more.html',
+			// 	complete: function(data) {
 
-					var $items = $(data.responseText);
+			// 		var $items = $(data.responseText);
 
-					setTimeout(function() {
+			// 		setTimeout(function() {
 
-						self.$wrapper.append($items)
+			// 			self.$wrapper.append($items)
 
-						self.$wrapper.isotope('appended', $items);
+			// 			self.$wrapper.isotope('appended', $items);
 
-						self.$wrapper.isotope('layout');
+			// 			self.$wrapper.isotope('layout');
 
-						self.currentPage++;
+			// 			self.currentPage++;
 
-						if(self.currentPage < self.pages) {
-							self.$btn.show().blur();
-						} else {
-							self.$btnWrapper.remove();
-						}
+			// 			if(self.currentPage < self.pages) {
+			// 				self.$btn.show().blur();
+			// 			} else {
+			// 				self.$btnWrapper.remove();
+			// 			}
 
-						self.$wrapper.on( 'layoutComplete', function( laidOutItems ) {
-							// Add new items to gallery
-							self.$wrapper.find('.item-appended').each(function(){
-								var imgsrc      = $(this).find('.thumb-info-background').attr('data-src'),
-									imgThumbsrc = $(this).find('.thumb-info-background').attr('data-thumb-src'),
-									clone       = $('#thumbGalleryDetail .owl-item > div').first().clone(),
-									cloneThumb  = $('#thumbGalleryThumbs .owl-item > div').first().clone();
+			// 			self.$wrapper.on( 'layoutComplete', function( laidOutItems ) {
+			// 				// Add new items to gallery
+			// 				self.$wrapper.find('.item-appended').each(function(){
+			// 					var imgsrc      = $(this).find('.thumb-info-background').attr('data-src'),
+			// 						imgThumbsrc = $(this).find('.thumb-info-background').attr('data-thumb-src'),
+			// 						clone       = $('#thumbGalleryDetail .owl-item > div').first().clone(),
+			// 						cloneThumb  = $('#thumbGalleryThumbs .owl-item > div').first().clone();
 
-								// Create images
-								clone.find('img').attr('src',imgsrc);
-								cloneThumb.find('img').attr('src',imgThumbsrc);
+			// 					// Create images
+			// 					clone.find('img').attr('src',imgsrc);
+			// 					cloneThumb.find('img').attr('src',imgThumbsrc);
 
-								// Add images
-								$('#thumbGalleryDetail').owlCarousel().trigger('add.owl.carousel', [clone]);					
-								$('#thumbGalleryThumbs').owlCarousel().trigger('add.owl.carousel', [cloneThumb]);
+			// 					// Add images
+			// 					$('#thumbGalleryDetail').owlCarousel().trigger('add.owl.carousel', [clone]);					
+			// 					$('#thumbGalleryThumbs').owlCarousel().trigger('add.owl.carousel', [cloneThumb]);
 
-								$(this).removeClass('item-appended');
-							});
+			// 					$(this).removeClass('item-appended');
+			// 				});
 
-							// Carousel
-							$(function() {
-								$('[data-plugin-carousel]:not(.manual), .owl-carousel:not(.manual)').each(function() {
-									var $this = $(this),
-										opts;
+			// 				// Carousel
+			// 				$(function() {
+			// 					$('[data-plugin-carousel]:not(.manual), .owl-carousel:not(.manual)').each(function() {
+			// 						var $this = $(this),
+			// 							opts;
 
-									var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
-									if (pluginOptions)
-										opts = pluginOptions;
+			// 						var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+			// 						if (pluginOptions)
+			// 							opts = pluginOptions;
 
-									$this.themePluginCarousel(opts);
-									setTimeout(function(){
-										$this.owlCarousel('refresh');
-									}, 1);
-								});
-							});
+			// 						$this.themePluginCarousel(opts);
+			// 						setTimeout(function(){
+			// 							$this.owlCarousel('refresh');
+			// 						}, 1);
+			// 					});
+			// 				});
 
-							// Lightbox - Clicked Item
-							$('a[href="#photographyLightbox"]').on('click', function(){
-								if($('.grid-sizer').get(0)) {
-									clickedItem = $(this).parent().parent().index() - 1;
-								} else {
-									clickedItem = $(this).parent().parent().index();
-								}
-							});
+			// 				// Lightbox - Clicked Item
+			// 				$('a[href="#photographyLightbox"]').on('click', function(){
+			// 					if($('.grid-sizer').get(0)) {
+			// 						clickedItem = $(this).parent().parent().index() - 1;
+			// 					} else {
+			// 						clickedItem = $(this).parent().parent().index();
+			// 					}
+			// 				});
 
-							// Lightbox
-							$('.popup-with-move-anim').magnificPopup(portfolioLightboxOptions);
+			// 				// Lightbox
+			// 				$('.popup-with-move-anim').magnificPopup(portfolioLightboxOptions);
 
-							initMagnificPopup();
-						});
+			// 				initMagnificPopup();
+			// 			});
 
 
 
-						self.$loader.hide();
+			// 			self.$loader.hide();
 
-						// Refresh Parallax
-						$(window).trigger('scroll');
+			// 			// Refresh Parallax
+			// 			$(window).trigger('scroll');
 
-					}, 1000);
+			// 		}, 1000);
 
-				}
-			});
+			// 	}
+			// });
 
 		}
 
