@@ -2535,6 +2535,7 @@ html.photography-demo-2 .custom-thumb-info-photographers .social-icons li a {
 	border-color: transparent;
 }
 html.photography-demo-2 .section-title h1 {
+	letter-spacing: 1px;
 	font-family: 'Crimson Pro', serif;
 	line-height: 1;
 	margin-top: 20px !important;
