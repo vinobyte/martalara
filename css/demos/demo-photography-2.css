@@ -2011,13 +2011,12 @@ section.contact-details .feature-box .feature-box-icon {
 }
 section.contact-details .feature-box .feature-box-icon .fa, section.contact-details .feature-box .feature-box-icon .fas, section.contact-details .feature-box .feature-box-icon .far, section.contact-details .feature-box .feature-box-icon .fal, section.contact-details .feature-box .feature-box-icon .fab, section.contact-details .feature-box .feature-box-icon .icons {
 	color: #FFF;
-	opacity: 0.5;
 }
 section.contact-details .feature-box .feature-box-info {
 	padding: 0;
 }
 section.contact-details .feature-box p, section.contact-details .feature-box a {
-	color: #b8b5b1;
+	color: #fff;
 }
 
 #footer.light.narrow {
